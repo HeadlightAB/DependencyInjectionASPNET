@@ -8,6 +8,9 @@ namespace Business
     {
         private readonly IDataAccess _dataAccess;
 
+        public VehicleService() : this(new StaticDataAccess())
+        {}
+
         public VehicleService(IDataAccess dataAccess)
         {
             _dataAccess = dataAccess;

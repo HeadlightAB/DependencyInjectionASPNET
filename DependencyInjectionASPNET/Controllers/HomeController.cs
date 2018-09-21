@@ -7,6 +7,9 @@ namespace DependencyInjectionASPNET.Controllers
     {
         private readonly IVehicleService _service;
 
+        public HomeController() : this(new VehicleService())
+        {}
+
         public HomeController(IVehicleService service)
         {
             _service = service;
