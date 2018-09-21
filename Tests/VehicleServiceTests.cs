@@ -33,7 +33,7 @@ namespace Tests
         public void ShouldReturnListOfVehiclesWhenGetAll()
         {
             var dataAccess = Substitute.For<IDataAccess>();
-            dataAccess.GetAllVehicles().Returns(new List<Vehicle> {new Vehicle()});
+            dataAccess.GetAllVehicles().Returns(new List<Vehicle> {new Vehicle("Whatever Car", "Whatever model", 1066) });
             var sut = new VehicleService(dataAccess);
 
             var result = sut.GetAll();

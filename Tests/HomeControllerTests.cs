@@ -36,7 +36,7 @@ namespace Tests
         public void ShouldReturnViewResultWithListWhenIndex()
         {
             var service = Substitute.For<IVehicleService>();
-            service.GetAll().Returns(new List<Vehicle> {new Vehicle()});
+            service.GetAll().Returns(new List<Vehicle> {new Vehicle("Whatever Car", "Whatever model", 1066)});
             var sut = new HomeController(service);
 
             var result = sut.Index().As<ViewResult>();
